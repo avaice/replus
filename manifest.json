@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name": "れぷらす",
+    "description": "RED STONEの複数アカウント管理が手軽にできるツール",
+    "version": "0.01",
+    "icons": {
+        "32": "icon32.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+    "content_scripts": [{
+        "matches": ["https://*/*"],
+        "js": ["replus.js"],
+        "run_at": "document_start"
+    }],
+    "browser_action": {
+        "default_icon": "icon32.png",
+        "default_title": "れぷらす",
+         "default_popup": "setting.html"
+    },
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "storage",
+        "cookies",
+        "*://members.redsonline.jp/*"
+      ]
+}
